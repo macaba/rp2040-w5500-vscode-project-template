@@ -10,7 +10,7 @@ This adds support for the W5500 ethernet offload IC. The development board is W5
 https://github.com/raspberrypi/pico-setup-windows/releases/latest/download/pico-setup-windows-x64-standalone.exe  
 (Note: this also installs VS Code if not already installed)
 
-- Flash the pico-probe with `debugprobe_on_pico.uf2` (included in the `files` folder)  
+- Flash the pico-probe with up-to-date firmware 
 (https://github.com/raspberrypi/debugprobe/releases/tag/debugprobe-v2.0.1)
 
 ## Per project
