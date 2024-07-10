@@ -258,18 +258,19 @@ void print_network_information(wiz_NetInfo net_info)
     ctlnetwork(CN_GET_NETINFO, (void *)&net_info);
     ctlwizchip(CW_GET_ID, (void *)tmp_str);
 
+    printf("====================================================================================================\n");
+    printf(" Device      : %s\n", (char *)tmp_str);
+    printf(" MAC         : %02X:%02X:%02X:%02X:%02X:%02X\n", net_info.mac[0], net_info.mac[1], net_info.mac[2], net_info.mac[3], net_info.mac[4], net_info.mac[5]);
+
     if (net_info.dhcp == NETINFO_DHCP)
     {
-        printf("====================================================================================================\n");
-        printf(" %s network configuration : DHCP\n\n", (char *)tmp_str);
+        printf(" IP mode     : DHCP\n");
     }
     else
     {
-        printf("====================================================================================================\n");
-        printf(" %s network configuration : static\n\n", (char *)tmp_str);
+        printf(" IP mode     : Static\n");
     }
-
-    printf(" MAC         : %02X:%02X:%02X:%02X:%02X:%02X\n", net_info.mac[0], net_info.mac[1], net_info.mac[2], net_info.mac[3], net_info.mac[4], net_info.mac[5]);
+ 
     printf(" IP          : %d.%d.%d.%d\n", net_info.ip[0], net_info.ip[1], net_info.ip[2], net_info.ip[3]);
     printf(" Subnet Mask : %d.%d.%d.%d\n", net_info.sn[0], net_info.sn[1], net_info.sn[2], net_info.sn[3]);
     printf(" Gateway     : %d.%d.%d.%d\n", net_info.gw[0], net_info.gw[1], net_info.gw[2], net_info.gw[3]);
